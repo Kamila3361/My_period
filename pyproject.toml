@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "my-period"
+version = "0.1.0"
+description = ""
+authors = ["Kamila <tashimovakamila1@gmail.com>"]
+readme = "README.md"
+packages = [{include = "my_period"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.5"
+djangorestframework = "^3.14.0"
+openai = "^0.28.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
