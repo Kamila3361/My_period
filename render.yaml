@@ -1,0 +1,25 @@
+services:
+  - name: my-period-django
+    dockerfile: Dockerfile
+    env: production
+    healthCheckPath: / 
+    httpPort: 8000
+
+  - name: my-period-postgresql
+    env: production
+    healthCheckPath: / 
+
+buildCommand:
+  - docker-compose build
+
+startCommand:
+  - docker-compose up -d
+
+stopCommand:
+  - docker-compose down
+
+routes:
+  - type: http
+    handle:
+      - path: /.*
+        destination: my-period-django:8000
