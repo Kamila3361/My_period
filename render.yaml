@@ -1,11 +1,12 @@
 services:
+  - type: web
   - name: my-period-django
-    type: web
     dockerfile: Dockerfile
     env: production
     healthCheckPath: / 
     httpPort: 8000
 
+databases:
   - name: my-period-postgresql
     env: production
     healthCheckPath: / 
