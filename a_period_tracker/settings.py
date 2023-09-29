@@ -75,6 +75,13 @@ WSGI_APPLICATION = 'a_period_tracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# import dj_database_url
+# import os
+
+# DATABASES = {
+# 	"default": dj_database_url.parse("postgres://my_period_app_user:fXXzHU56f4nys8zitXzJ8vz807su7zOR@dpg-cka5nimv3ddc73b6ab90-a.oregon-postgres.render.com/my_period_app")
+# }
+
 import environ
 
 env = environ.Env()
