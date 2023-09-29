@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  my_period_django:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - my_period_postgresql
+  
+  my_period_postgresql:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
