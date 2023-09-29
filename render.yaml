@@ -1,5 +1,6 @@
 services:
   - name: my-period-django
+    type: web
     dockerfile: Dockerfile
     env: production
     healthCheckPath: / 
