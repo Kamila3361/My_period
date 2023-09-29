@@ -4,7 +4,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
 from .models import PeriodCycle, PersonalInfo, ChatInfo
-from ..secret_key import API_KEY
+from .secret_key import API_KEY
 
 from rest_framework.response import Response
 from rest_framework import status, generics
