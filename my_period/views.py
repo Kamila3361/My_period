@@ -4,14 +4,18 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
 from .models import PeriodCycle, PersonalInfo, ChatInfo
-from .secret_key import API_KEY
 
 from rest_framework.response import Response
 from rest_framework import status, generics
 from .serializer import PeriodSerializer, UserSerializer, PersonalInfoSerializer, ChatSerializer, MessageSerializer
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 import openai
-openai.api_key = API_KEY
+openai.api_key = env("API_KEY")
 
 class SignUpView(generics.CreateAPIView):
     serializer_class = UserSerializer
